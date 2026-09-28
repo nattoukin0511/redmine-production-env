@@ -97,6 +97,14 @@ config/credentials.yml.enc
 #6.学んだこと
  権限・所有者の見直し: www-data への所有者変更と パーミッションの適切な設定により、Passengerからのアクセス権エラーを解消。
 
+ PassengerRuby設定する際に気を付けること
+ 本番環境やステージング環境のWebサーバー（Apache/Nginx）を設定する際、`PassengerRuby`（または `passenger_ruby`）のパスに `~/.rbenv/shims/ruby` や `/home/ユーザー名/...` 以下のパスを指定しないでください。
+
+* **理由:** Webサーバー（`www-data` や `nginx` ユーザー）には、各ユーザーの `/home` ディレクトリ内を実行する権限（パーミッション）がないため、サイトが起動せずエラーになります。また、環境変数が引き継がれないため `shims` は正常に動作しません。
+
+* **対策:** 必ず `rbenv` でインストールされた**本物のRubyバイナリのフルパス**を指定してください。例 /usr/bin/ruby
+
+
  Rubyバージョンの整合性: 意図しないバージョン（3.3.0等）が混ざっていたため、環境を整理して対応。
 
  本番環境の明示: RAILS_ENV=production を付与して db:migrate や redmine:load_default_data を実行し、本番DBを正しく構築。
