@@ -72,11 +72,9 @@ PassengerRuby /usr/bin/ruby
  4.RAILS_ENV=production を付けて、本番環境向け設定でDBマイグレーションと初期データ投入を実施しました。
  RAILS_ENV=production bundle exec rake db:migrate
 
- # 初期データ
  5.RAILS_ENV=production bundle exec rake    redmine:load_default_data
-
- #6 秘密鍵作成
- sudo nano secret_token.rb
+ 
+ 6.sudo nano secret_token.rb
  ruby -e "require 'securerandom'; puts SecureRandom.hex(64)
 ---
 #5.修正ファイル
