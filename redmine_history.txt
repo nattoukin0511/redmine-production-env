@@ -1,0 +1,1000 @@
+ 1019  sudo cat /etc/apache2/mods-enabled/passenger.load
+ 1020  sudo cat /etc/apache2/mods-enabled/passenger.conf
+ 1021  sudo cat /etc/apache2/mods-available/passenger.load
+ 1022  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1023  ls -l /usr/lib/apache2/modules/mod_passenger.so
+ 1024  sudo rm /usr/lib/apache2/modules/mod_passenger.so
+ 1025  sudo apt install --reinstall passenger libapache2-mod-passenger
+ 1026  sudo systemctl restart apache2
+ 1027  clipcat /var/log/apache2/error.log
+ 1028  sudo rm -rf /var/tmp/passenger*
+ 1029  sudo rm -rf /tmp/passenger*
+ 1030  sudo passenger-config compile-native-support
+ 1031  sudo systemctl restart apache2
+ 1032  clipcat /var/log/apache2/error.log
+ 1033  sudo rm -rf /tmp/passenger*
+ 1034  sudo rm -rf /var/tmp/passenger*
+ 1035  sudo passenger-config compile-native-support
+ 1036  sudo systemctl restart apache2
+ 1037  clipcat /var/log/apache2/error.log
+ 1038  sudo mv /home/gomaz/.rvm /home/gomaz/.rvm_backup
+ 1039  which ruby
+ 1040  ruby -v
+ 1041  cd /var/www/redmine
+ 1042  sudo rm -f Gemfile.lock
+ 1043  sudo bundle install --path vendor/bundle
+ 1044  sudo passenger-config compile-native-support
+ 1045  sudo systemctl restart apache2
+ 1046  clipcat /var/log/apache2/error.log
+ 1047  which ruby
+ 1048  ruby -v
+ 1049  cd /var/www/redmine
+ 1050  sudo gem install bundler
+ 1051  sudo bundle install --without development test
+ 1052  rm -rf /home/gomaz/.rvm/gems/ruby-3.2.2/gems/passenger-6.2.0
+ 1053  rm -rf /home/gomaz/.rvm/gems/ruby-3.2.2/gems/passenger-*
+ 1054  sudo systemctl restart apache2
+ 1055  clipcat /var/log/apache2/error.log
+ 1056  sudo rm -rf /tmp/passenger*
+ 1057  sudo rm -rf /var/tmp/passenger*
+ 1058  sudo passenger-config compile-native-support
+ 1059  sudo systemctl restart apache2
+ 1060  clipcat /var/log/apache2/error.log
+ 1061  sudo apt-get install --reinstall passenger
+ 1062  rvm gemset empty
+ 1063  rvm uninstall passenger
+ 1064  grep -R passenger /etc/apache2/
+ 1065  rm -rf /home/gomaz/.rvm
+ 1066  grep -R "rvm" ~/.bashrc ~/.profile ~/.bash_profile
+ 1067  which ruby
+ 1068  ruby -v
+ 1069  passenger-config --ruby
+ 1070  apache2ctl -M | grep passenger
+ 1071  passenger-config --ruby
+ 1072  cat /etc/apache2/mods-enabled/passenger.conf
+ 1073  sed -i '/rvm/d' ~/.profile
+ 1074  sed -i '/rvm/d' ~/.bash_profile
+ 1075  sudo systemctl show apache2 | grep Environment
+ 1076  sudo sed -i '1i PassengerDisableNativeSupportBinary on' /etc/apache2/mods-available/passenger.conf
+ 1077  sudo systemctl restart apache2
+ 1078  clipcat /var/log/apache2/error.log
+ 1079  cd /var/www/redmine
+ 1080  sudo /usr/bin/ruby -v
+ 1081  sudo gem install bundler
+ 1082  sudo bundle install --without development test
+ 1083  sudo systemctl restart apache2
+ 1084  sudo systemctl status apache2
+ 1085  sudo sed -i '/PassengerDisableNativeSupportBinary/d' /etc/apache2/mods-available/passenger.conf
+ 1086  sudo sed -i '/PassengerDisableNativeSupportBinary/d' /etc/apache2/mods-enabled/passenger.conf
+ 1087  sudo sed -i '/<IfModule mod_passenger.c>/a \  PassengerDisableNativeSupportBinary on' /etc/apache2/mods-available/passenger.conf
+ 1088  sudo systemctl restart apache2
+ 1089  clipcat /var/log/apache2/error.log
+ 1090  sudo systemctl status apache2
+ 1091  cd /var/www/redmine
+ 1092  sudo gem install bundler
+ 1093  sudo bundle install --without development test
+ 1094  sudo systemctl restart apache2
+ 1095  clipcat /var/log/apache2/error.log
+ 1096  cd /var/www/redmine
+ 1097  sudo gem install bundler
+ 1098  sudo bundle install --without development test
+ 1099  sudo systemctl restart apache2
+ 1100  clipcat /var/log/apache2/error.log
+ 1101  sudo systemctl restart apache2
+ 1102  cd /var/www/redmine
+ 1103  sudo gem install bundler
+ 1104  sudo bundle install --without development test
+ 1105  sudo systemctl restart apache2
+ 1106  clipcat /var/log/apache2/error.log
+ 1107  cd /var/www/redmine
+ 1108  sudo gem install bundler
+ 1109  sudo bundle install --without development test
+ 1110  sudo systemctl restart apache2
+ 1111  clipcat /var/log/apache2/error.log
+ 1112  cd /var/www
+ 1113  cd /var/www/redmine
+ 1114  ls
+ 1115  clipcat /var/log/apache2/error.log
+ 1116  grep -R "PassengerRuby" /etc/apache2/sites-enabled/
+ 1117  grep -R "DocumentRoot" /etc/apache2/sites-enabled/
+ 1118  grep -R "PassengerAppRoot" /etc/apache2/sites-enabled/
+ 1119  grep -R "<Directory" /etc/apache2/sites-enabled/
+ 1120  ls -ld /var/www/redmine/files
+ 1121  ls -ld /var/www/redmine/log
+ 1122  ls -ld /var/www/redmine/tmp
+ 1123  ls -ld /var/www/redmine/public/plugin_assets
+ 1124  passenger-config about ruby-command
+ 1125  apache2ctl -M | grep passenger
+ 1126  cd /var/www/redmine
+ 1127  bundle exec ruby -v
+ 1128  bundle exec rails -v
+ 1129  gem uninstall bundler
+ 1130  echo 'export PATH="$HOME/.rbenv/shims:$PATH"' >> ~/.bashrc
+ 1131  source ~/.bashrc
+ 1132  gem install bundler -v 2.5.3
+ 1133  cd /var/www/redmine
+ 1134  bundle install --path vendor/bundle
+ 1135  grep -R "PassengerDefaultRuby" /etc/apache2/mods-available/passenger.conf
+ 1136  sudo systemctl restart apache2
+ 1137  clipcat /var/log/apache2/error.log
+ 1138  cd /var/www/redmine
+ 1139  rm -rf vendor/bundle
+ 1140  rm -rf Gemfile.lock
+ 1141  bundle install --without development test --path vendor/bundle
+ 1142  grep -R "PassengerDefaultRuby" /etc/apache2/mods-available/passenger.conf
+ 1143  sudo systemctl restart apache2
+ 1144  clipcat /var/log/apache2/error.log
+ 1145  sudo chown -R www-data:www-data /var/www/redmine
+ 1146  sudo chmod -R 775 /var/www/redmine
+ 1147  cd /var/www/redmine
+ 1148  cp config/secrets.yml.example config/secrets.yml
+ 1149  sudo chown www-data:www-data config/secrets.yml
+ 1150  sudo chmod 640 config/secrets.yml
+ 1151  sudo chown -R www-data:www-data /var/www/redmine
+ 1152  sudo chmod -R 775 /var/www/redmine
+ 1153  grep -R "PassengerDefaultRuby" /etc/apache2/mods-available/passenger.conf
+ 1154  sudo systemctl restart apache2
+ 1155  clipcat /var/log/apache2/error.log
+ 1156  sudo chown -R www-data:www-data /var/www/redmine
+ 1157  sudo chmod -R 775 /var/www/redmine
+ 1158  sudo systemctl restart apache2
+ 1159  clipcat /var/log/apache2/error.log
+ 1160  sudo chown -R www-data:www-data /var/www
+ 1161  sudo chmod -R 775 /var/www
+ 1162  sudo systemctl restart apache2
+ 1163  clipcat /var/log/apache2/error.log
+ 1164  sudo chown -R www-data:www-data /var/www
+ 1165  sudo chmod -R 775 /var/www
+ 1166  sudo systemctl restart apache2
+ 1167  clipcat /var/log/apache2/error.log
+ 1168  ls -l /var/www/redmine/config/initializers/secret_token.rb
+ 1169  ls -l /var/www/redmine/config/secrets.yml
+ 1170  cd /var/www/redmine
+ 1171  bundle exec rake generate_secret_token
+ 1172  sudo systemctl restart apache2
+ 1173  clipcat /var/log/apache2/error.log
+ 1174  cd /var/www/redmine
+ 1175  RAILS_ENV=production bin/rails credentials:edit
+ 1176  config/credentials.yml.enc
+ 1177  config/master.key
+ 1178  sudo chown -R www-data:www-data /var/www/redmine
+ 1179  sudo chmod -R 755 /var/www/redmine
+ 1180  ls -ld /var/www
+ 1181  ls -ld /var/www/redmine
+ 1182  ls -ld /var/www/redmine/tmp
+ 1183  ls -ld /var/www/redmine/log
+ 1184  sudo chown -R www-data:www-data /var/www/redmine
+ 1185  sudo chmod -R 755 /var/www/redmine
+ 1186  sudo chmod -R 755 /var/www/redmine/tmp /var/www/redmine/log
+ 1187  cd /var/www/redmine
+ 1188  EDITOR=vim bin/rails credentials:edit
+ 1189  sudo systemctl restart apache2
+ 1190  clipcat /var/log/apache2/error.log
+ 1191  rbenv install 3.2.2
+ 1192  rbenv global 3.2.2
+ 1193  rm -rf ~/.rbenv/versions/3.2.2
+ 1194  rbenv install 3.2.2
+ 1195  rbenv global 3.2.2
+ 1196  rbenv rehash
+ 1197  ruby -v
+ 1198  rm -rf ~/.rbenv/versions/3.2.2
+ 1199  rbenv install 3.2.2
+ 1200  rbenv global 3.2.2
+ 1201  rbenv rehash
+ 1202  ruby -v
+ 1203  cd /var/www/redmine
+ 1204  EDITOR=vim bin/rails credentials:edit
+ 1205  sudo chown -R www-data:www-data /var/www/redmine
+ 1206  sudo chmod -R 755 /var/www/redmine
+ 1207  sudo chmod -R 775 /var/www/redmine/tmp /var/www/redmine/log
+ 1208  sudo systemctl restart apache2
+ 1209  clipcat /var/log/apache2/error.log
+ 1210  rm -rf ~/.rbenv/versions/3.3.0
+ 1211  rm -rf ~/.rbenv/versions/3.2.2
+ 1212  rbenv install 3.2.2
+ 1213  rbenv global 3.2.2
+ 1214  rbenv rehash
+ 1215  ruby -v
+ 1216  cd /var/www/redmine
+ 1217  EDITOR=vim bin/rails credentials:edit
+ 1218  sudo chown -R www-data:www-data /var/www/redmine
+ 1219  sudo chmod -R 775 /var/www/redmine/tmp /var/www/redmine/log
+ 1220  sudo systemctl restart apache2
+ 1221  clipcat /var/log/apache2/error.log
+ 1222  rm -rf ~/.rbenv/versions/3.3.0
+ 1223  rm -rf ~/.rbenv/versions/3.2.2
+ 1224  rbenv install 3.2.2
+ 1225  rbenv global 3.2.2
+ 1226  rbenv rehash
+ 1227  ruby -v
+ 1228  rm -rf ~/.rbenv/versions/3.3.0
+ 1229  rm -rf ~/.rbenv/versions/3.2.2
+ 1230  rbenv install 3.2.2
+ 1231  rbenv global 3.2.2
+ 1232  rbenv rehash
+ 1233  ruby -v
+ 1234  ruby -rpsych -e 'puts Psych.dump({"test" => 1})'
+ 1235  ruby -ropenssl -e 'puts OpenSSL::OPENSSL_VERSION'
+ 1236  cd /var/www/redmine
+ 1237  EDITOR=vim bin/rails credentials:edit
+ 1238  cd /var/www/redmine
+ 1239  RAILS_ENV=production bin/rails runner "puts Rails.application.secret_key_base.present?"
+ 1240  cd /var/www/redmine
+ 1241  sudo -u www-data bundle install --gemfile /var/www/redmine/Gemfile
+ 1242  RAILS_ENV=production bin/rails runner "puts Rails.application.secret_key_base.present?"
+ 1243  passenger-config about ruby
+ 1244  sudo vim /etc/apache2/sites-available/redmine.conf
+ 1245  sudo systemctl restart apache2
+ 1246  clipcat /var/log/apache2/error.log
+ 1247  sudo passenger-status
+ 1248  clipcat /var/log/apache2/error.log
+ 1249  sudo vim /etc/apache2/sites-available/redmine.conf
+ 1250  sudo cat /etc/apache2/sites-available/redmine.conf
+ 1251  sudo vim /etc/apache2/sites-available/redmine.conf
+ 1252  sudo cat /etc/apache2/sites-available/redmine.conf
+ 1253  sudo systemctl restart apache2
+ 1254  clipcat /var/log/apache2/error.log
+ 1255  cd /var/www/redmine
+ 1256  EDITOR=vim bin/rails credentials:edit
+ 1257  sudo systemctl restart apache2
+ 1258  clipcat /var/log/apache2/error.log
+ 1259  sudo systemctl restart apache2
+ 1260  clipcat /var/log/apache2/error.log
+ 1261  passenger-config about ruby
+ 1262  sudo systemctl restart apache2
+ 1263  passenger-config about ruby
+ 1264  sudo systemctl restart apache2
+ 1265  clipcat /var/log/apache2/error.log
+ 1266  sudo systemctl restart apache2
+ 1267  passenger-config about ruby
+ 1268  cd /var/www/redmine
+ 1269  rm -rf vendor/bundle
+ 1270  RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1271  sudo systemctl restart apache2
+ 1272  clipcat /var/log/apache2/error.log
+ 1273  cd /var/www/redmine
+ 1274  rm -rf vendor/bundle
+ 1275  ls -l vendor
+ 1276  sudo rm -rf /var/www/redmine/vendor/bundle
+ 1277  ls -l vendor
+ 1278  cd /var/www/redmine
+ 1279  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1280  ls -l vendor/bundle
+ 1281  sudo systemctl restart apache2
+ 1282  clipcat /var/log/apache2/error.log
+ 1283  grep -R "vendor/bundle" /var/www/redmine
+ 1284  grep PassengerRuby /etc/apache2/* -n
+ 1285  grep -R PassengerRuby /etc/apache2 2>/dev/null
+ 1286  ls -ld /var/www/redmine
+ 1287  ls vendor/bundle/ruby
+ 1288  grep -R "ruby/3" log/ -n | head
+ 1289  sudo chown -R www-data:www-data /var/www/redmine
+ 1290  cd /var/www/redmine
+ 1291  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1292  sudo systemctl restart apache2
+ 1293  clipcat /var/log/apache2/error.log
+ 1294  ls -ld /var/www/redmine
+ 1295  ls -ld /var/www
+ 1296  ls vendor/bundle/ruby
+ 1297  sudo rm -rf vendor/bundle/ruby/3.3.0
+ 1298  ls vendor/bundle/ruby
+ 1299  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1300  sudo systemctl restart apache2
+ 1301  clipcat /var/log/apache2/error.log
+ 1302  sudo rm -rf vendor/bundle/ruby/3.3.0
+ 1303  sudo ls -rf vendor/bundle/ruby/3.3.0
+ 1304  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1305  sudo ls -rf vendor/bundle/ruby/
+ 1306  sudo ls vendor/bundle/ruby/
+ 1307  sudo -u www-data ls -l /var/www/redmine/vendor/bundle/ruby
+ 1308  sudo -u www-data rm -rf /var/www/redmine/vendor/bundle/ruby/3.3.0
+ 1309  cd /var/www/redmine
+ 1310  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1311  sudo systemctl restart apache2
+ 1312  sudo -u www-data ls vendor/bundle/ruby
+ 1313  sudo -u www-data rm -rf /var/www/redmine/vendor/bundle/ruby/3.3.0
+ 1314  cd /var/www/redmine
+ 1315  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1316  sudo systemctl restart apache2
+ 1317  sudo -u www-data ls vendor/bundle/ruby
+ 1318  sudo -u www-data echo $HOME
+ 1319  sudo usermod -d /var/www www-data
+ 1320  sudo -u www-data env | grep HOME
+ 1321  sudo -u www-data rm -rf /var/www/redmine/vendor/bundle/ruby/3.3.0
+ 1322  cd /var/www/redmine
+ 1323  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1324  sudo systemctl restart apache2
+ 1325  sudo -u www-data ls vendor/bundle/ruby
+ 1326  sudo -u www-data RBENV_VERSION=3.2.2 ruby -v
+ 1327  which rbenv
+ 1328  sudo sh -c 'echo "export RBENV_ROOT=/home/gomaz/.rbenv" >> /etc/environment'
+ 1329  sudo sh -c 'echo "export PATH=/home/gomaz/.rbenv/bin:/home/gomaz/.rbenv/shims:$PATH" >> /etc/environment'
+ 1330  source /etc/environment
+ 1331  sudo -u www-data RBENV_VERSION=3.2.2 ruby -v
+ 1332  sudo sh -c 'echo "export RBENV_ROOT=/home/gomaz/.rbenv" >> /etc/environment'
+ 1333  sudo sh -c 'echo "export PATH=/home/gomaz/.rbenv/bin:/home/gomaz/.rbenv/shims:$PATH" >> /etc/environment'
+ 1334  sudo -u www-data RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1335  sudo -u www-data env | grep PATH
+ 1336  sudo sh -c 'echo "RBENV_ROOT=/home/gomaz/.rbenv" >> /etc/environment'
+ 1337  sudo sh -c 'echo "PATH=/home/gomaz/.rbenv/bin:/home/gomaz/.rbenv/shims:$PATH" >> /etc/environment'
+ 1338  source /etc/environment
+ 1339  sudo -u www-data env | grep PATH
+ 1340  sudo systemctl edit apache2
+ 1341  sudo systemctl daemon-reload
+ 1342  sudo systemctl restart apache2
+ 1343  sudo -u www-data RBENV_VERSION=3.2.2 ruby -v
+ 1344  sudo systemctl cat apache2
+ 1345  sudo systemctl edit apache2
+ 1346  sudo systemctl daemon-reload
+ 1347  sudo systemctl restart apache2
+ 1348  sudo -u www-data RBENV_VERSION=3.2.2 ruby -v
+ 1349  sudo mkdir -p /etc/systemd/system/apache2.service.d
+ 1350  sudo nano /etc/systemd/system/apache2.service.d/override.conf
+ 1351  sudo systemctl daemon-reload
+ 1352  sudo systemctl restart apache2
+ 1353  sudo -u www-data RBENV_VERSION=3.2.2 ruby -v
+ 1354  sudo mkdir -p /etc/systemd/system/apache2.service.d
+ 1355  sudo nano /etc/systemd/system/apache2.service.d/override.conf
+ 1356  sudo ls -R /etc/systemd/system/apache2.service.d
+ 1357  sudo cat /etc/systemd/system/apache2.service.d/override.conf
+ 1358  sudo nano /etc/systemd/system/apache2.service.d/override.conf
+ 1359  sudo systemctl daemon-reload
+ 1360  sudo systemctl restart apache2
+ 1361  sudo nano /etc/systemd/system/apache2.service.d/override.conf
+ 1362  sudo cat /etc/systemd/system/apache2.service.d/override.conf
+ 1363  cd /var/www
+ 1364  ls
+ 1365  cd /var/www/redmine
+ 1366  sudo passenger-config about ruby
+ 1367  sudo passenger-config about ruby-command
+ 1368  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1369  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1370  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1371  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1372  sudo passenger-config about ruby-command
+ 1373  ls -l /etc/apache2/mods-enabled/passenger.conf
+ 1374  sudo rm /etc/apache2/mods-enabled/passenger.conf
+ 1375  sudo a2enmod passenger
+ 1376  sudo systemctl restart apache2
+ 1377  sudo journalctl -xeu apache2.service
+ 1378  sudo sed -n '70,100p' /etc/apache2/apache2.conf
+ 1379  grep APACHE_RUN_DIR /etc/apache2/envvars
+ 1380  ls -ld /run/apache2
+ 1381  sudo mkdir -p /run/apache2
+ 1382  sudo chown root:root /run/apache2
+ 1383  sudo chmod 755 /run/apache2
+ 1384  sudo systemctl restart apache2
+ 1385  sudo journalctl -xeu apache2.service -n 50
+ 1386  sudo systemctl status apache2.service -l
+ 1387  sudo mkdir -p /run/apache2
+ 1388  sudo chown root:root /run/apache2
+ 1389  sudo chmod 755 /run/apache2
+ 1390  sudo systemctl restart apache2
+ 1391  sudo passenger-config about ruby-command
+ 1392  sudo rm -rf /run/apache2
+ 1393  sudo systemctl daemon-reload
+ 1394  sudo systemctl stop apache2
+ 1395  sudo killall apache2
+ 1396  sudo systemctl start apache2
+ 1397  clipcat /var/log/apache2/error.log
+ 1398  sudo systemctl status apache2.service -l
+ 1399  sudo sed -n '80p' /etc/apache2/apache2.conf
+ 1400  sudo sed -n '1,200p' /etc/apache2/mods-enabled/passenger.conf
+ 1401  sudo rm /etc/apache2/mods-available/passenger.conf
+ 1402  sudo rm /etc/apache2/mods-enabled/passenger.conf
+ 1403  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1404  sudo a2enmod passenger
+ 1405  sudo systemctl stop apache2
+ 1406  sudo killall apache2
+ 1407  sudo systemctl start apache2
+ 1408  ls -l /etc/apache2/mods-enabled | grep passenger
+ 1409  # Apacheのエラーログ確認（Debian/Ubuntu）
+ 1410  sudo tail -n 50 /var/log/apache2/error.log
+ 1411  # RHEL/CentOS系の場合
+ 1412  sudo tail -n 50 /var/log/httpd/error_log
+ 1413  # Redmine固有のエラーログ確認
+ 1414  sudo tail -n 50 /var/www/redmine/log/production.log
+ 1415  # Debian/Ubuntu (Apache2) のエラーログをクリップボードにコピー
+ 1416  sudo tail -n 50 /var/log/apache2/error.log | clipcat-menu insert
+ 1417  # または wl-clipboard (Wayland環境) の場合:
+ 1418  # sudo tail -n 50 /var/log/apache2/error.log | wl-copy
+ 1419  # RHEL/CentOS (httpd) の場合
+ 1420  sudo tail -n 50 /var/log/httpd/error_log | clipcat-menu insert
+ 1421  # Redmine production.log の場合
+ 1422  sudo tail -n 50 /var/www/redmine/log/production.log | clipcat-menu insert
+ 1423  sudo tail -n 50 /var/www/redmine/log/production.log
+ 1424  sudo clipcat tail -n 50 /var/www/redmine/log/production.log
+ 1425  clipcat /var/www/redmine/log/production.log
+ 1426  clipcat /var/log/apache2/error.log
+ 1427  cd /var/www/redmine
+ 1428  # Ruby 3.2のインストール（未インストールの場合）
+ 1429  rbenv install 3.2.3
+ 1430  # RedmineディレクトリのRubyバージョンを3.2.3に固定
+ 1431  rbenv local 3.2.3
+ 1432  ruby -v  # 3.2.3 と表示されるか検証
+ 1433  n
+ 1434  sudo a2dismod passenger
+ 1435  sudo rm /etc/apache2/mods-available/passenger.conf
+ 1436  sudo systemctl restart apache2
+ 1437  sudo rm /etc/apache2/mods-available/passenger.conf
+ 1438  ls -l /etc/apache2/mods-enabled | grep passenger
+ 1439  grep -R "Passenger" /etc/apache2/sites-enabled
+ 1440  sudo nano /etc/apache2/sites-enabled/redmine.conf
+ 1441  sudo systemctl restart apache2
+ 1442  sudo cat /etc/apache2/sites-enabled/redmine.conf
+ 1443  sudo nano /etc/apache2/sites-enabled/redmine.conf
+ 1444  sudo cat /etc/apache2/sites-enabled/redmine.conf
+ 1445  cat /etc/apache2/mods-enabled/passenger.load
+ 1446  cat /etc/apache2/apache2.conf
+ 1447  ls -l /etc/apache2/conf-enabled
+ 1448  sudo systemctl status apache2
+ 1449  ls -ld /run/apache2
+ 1450  cat /etc/apache2/envvars
+ 1451  sudo mkdir -p /run/apache2
+ 1452  sudo chown root:root /run/apache2
+ 1453  sudo chmod 755 /run/apache2
+ 1454  sudo apache2ctl -M | grep passenger
+ 1455  sudo apt install libapache2-mod-passenger
+ 1456  sudo a2enmod passenger
+ 1457  sudo systemctl restart apache2
+ 1458  sudo journalctl -xeu apache2.service
+ 1459  sudo cat /etc/systemd/system/apache2.service.d/override.conf
+ 1460  sudo rm /etc/systemd/system/apache2.service.d/override.conf
+ 1461  sudo systemctl daemon-reload
+ 1462  sudo systemctl restart apache2
+ 1463  sudo nano /etc/apache2/sites-available/redmine.conf
+ 1464  sudo a2ensite redmine.conf
+ 1465  sudo apache2ctl configtest
+ 1466  sudo systemctl restart apache2
+ 1467  sudo apache2ctl -M | grep passenger
+ 1468  sudo a2enmod passenger
+ 1469  sudo apache2ctl configtest
+ 1470  sudo systemctl restart apache2
+ 1471  sudo apache2ctl -M | grep passenger
+ 1472  sudo a2dissite 000-default
+ 1473  sudo a2ensite redmine.conf
+ 1474  sudo apache2ctl configtest
+ 1475  sudo systemctl restart apache2
+ 1476  sudo apache2ctl -M | grep passenger
+ 1477  ls -l /var/www/redmine/config.ru
+ 1478  cd /var/www/redmine
+ 1479  bundle install --without development test
+ 1480  sudo chown -R gomaz:gomaz /var/www/redmine
+ 1481  cd /var/www/redmine
+ 1482  bundle install --without development test
+ 1483  mkdir -p tmp tmp/pids tmp/cache
+ 1484  sudo chown -R gomaz:gomaz tmp
+ 1485  sudo systemctl restart apache2
+ 1486  sudo chown -R gomaz:gomaz /var/www/redmine
+ 1487  cd /var/www/redmine
+ 1488  bundle install --without development test
+ 1489  mkdir -p tmp tmp/pids tmp/cache
+ 1490  sudo chown -R gomaz:gomaz tmp
+ 1491  sudo systemctl restart apache2
+ 1492  sudo chown -R gomaz:gomaz /var/www/redmine
+ 1493  cd /var/www/redmine
+ 1494  bundle install --without development test
+ 1495  mkdir -p tmp tmp/pids tmp/cache
+ 1496  sudo chown -R gomaz:gomaz tmp
+ 1497  sudo systemctl restart apache2
+ 1498  sudo tail -n 50 /var/log/apache2/error.log
+ 1499  clipcat tail -n 50 /var/log/apache2/error.log
+ 1500  clipcat  -n 50 /var/log/apache2/error.log
+ 1501  clipcat -n 50 /var/log/apache2/error.log
+ 1502  clipcat /var/log/apache2/error.log
+ 1503  sudo apt-get install --reinstall libapache2-mod-passenger
+ 1504  sudo a2enmod passenger
+ 1505  sudo apache2ctl configtest
+ 1506  sudo systemctl restart apache2
+ 1507  grep PassengerRoot /etc/apache2/mods-available/passenger.conf
+ 1508  sudo apt-get install --reinstall libapache2-mod-passenger
+ 1509  sudo a2enmod passenger
+ 1510  sudo apache2ctl configtest
+ 1511  sudo systemctl restart apache2
+ 1512  grep PassengerRoot /etc/apache2/mods-available/passenger.conf
+ 1513  sudo apt-get purge libapache2-mod-passenger
+ 1514  sudo apt-get install libapache2-mod-passenger
+ 1515  sudo a2enmod passenger
+ 1516  sudo systemctl restart apache2
+ 1517  grep PassengerRoot /etc/apache2/mods-available/passenger.conf
+ 1518  sudo systemctl restart apache2
+ 1519  clipcat /var/log/apache2/error.log
+ 1520  grep PassengerRuby /etc/apache2/sites-available/redmine.conf
+ 1521  clipcat /var/log/apache2/error.log
+ 1522  grep -R "PassengerRoot" /etc/apache2
+ 1523  ls -l /etc/apache2/mods-enabled/passenger.conf
+ 1524  grep -R "LoadModule passenger_module" /etc/apache2
+ 1525  grep -R "PassengerRoot" /etc/apache2
+ 1526  grep -R "PassengerRuby" /etc/apache2
+ 1527  /home/gomaz/.rbenv/shims/ruby -v
+ 1528  RBENV_VERSION=3.2.2 gem install bundler
+ 1529  RBENV_VERSION=3.2.2 bundle install
+ 1530  PassengerRuby /home/gomaz/.rbenv/shims/ruby
+ 1531  journalctl -u apache2 -n 50
+ 1532  passenger-config --root
+ 1533  RBENV_VERSION=3.2.2 gem install passenger
+ 1534  RBENV_VERSION=3.2.2 passenger --version
+ 1535  RBENV_VERSION=3.2.2 passenger-config --root
+ 1536  sudo systemctl restart apache2
+ 1537  clipcat /var/log/apache2/error.log
+ 1538  RBENV_VERSION=3.2.2 gem install passenger
+ 1539  RBENV_VERSION=3.2.2 passenger-config --root
+ 1540  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1541  sudo systemctl restart apache2
+ 1542  grep -R "PassengerRoot" /etc/apache2
+ 1543  passenger-memory-stats
+ 1544  sudo passenger-memory-stats
+ 1545  sudo tail -n 50 /var/log/apache2/error.log
+ 1546  sudo a2dismod passenger
+ 1547  RBENV_VERSION=3.2.2 passenger-install-apache2-module
+ 1548  RBENV_VERSION=3.2.2 passenger-config install-apache2-module
+ 1549  sudo /home/gomaz/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/passenger-6.2.0/bin/passenger-config compile-agent
+ 1550  sudo /home/gomaz/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/passenger-6.2.0/bin/passenger-config compile-native-support
+ 1551  sudo systemctl restart apache2
+ 1552  cd /var/www
+ 1553  cd /var/www/redmine
+ 1554  sudo systemctl restart apache2
+ 1555  clipcat /var/log/apache2/error.log
+ 1556  apachectl -M | grep passenger
+ 1557  ls /usr/lib/apache2/modules | grep passenger
+ 1558  ls -l /etc/apache2/mods-enabled | grep passenger
+ 1559  sudo a2enmod passenger
+ 1560  sudo ln -s /etc/apache2/mods-available/passenger.load /etc/apache2/mods-enabled/passenger.load
+ 1561  sudo ln -s /etc/apache2/mods-available/passenger.conf /etc/apache2/mods-enabled/passenger.conf
+ 1562  sudo systemctl restart apache2
+ 1563  clipcat /var/log/apache2/error.log
+ 1564  sudo nano /etc/apache2/sites-enabled/redmine.conf
+ 1565  sudo systemctl restart apache2
+ 1566  apachectl -M | grep passenger
+ 1567  clipcat /var/log/apache2/error.log
+ 1568  sudo cat /etc/apache2/sites-enabled/redmine.conf
+ 1569  sudo /usr/bin/bundle install --without development test
+ 1570  sudo gem install bundler
+ 1571  sudo /usr/bin/bundle install --without development test
+ 1572  sudo systemctl restart apache2
+ 1573  clipcat /var/log/apache2/error.log
+ 1574  sudo /usr/bin/bundle install --without development test
+ 1575  sudo systemctl restart apache2
+ 1576  clipcat /var/log/apache2/error.log
+ 1577  sudo /usr/bin/bundle install --without development test
+ 1578  sudo systemctl restart apache2
+ 1579  clipcat /var/log/apache2/error.log
+ 1580  sudo gem install bundler
+ 1581  sudo /usr/bin/bundle install --without development test
+ 1582  sudo systemctl restart apache2
+ 1583  clipcat /var/log/apache2/error.log
+ 1584  sudo /usr/bin/bundle install --without development test
+ 1585  sudo systemctl restart apache2
+ 1586  sudo passenger-config about ruby-command
+ 1587  sudo passenger-config about bundler
+ 1588  /home/gomaz/.rbenv/versions/3.2.2/bin/ruby
+ 1589  cd /var/www/redmine
+ 1590  rm -rf vendor/bundle
+ 1591  RBENV_VERSION=3.2.2 bundle install --path vendor/bundle
+ 1592  cd /var/www/redmine
+ 1593  bundle config set path 'vendor/bundle'
+ 1594  bundle config set without 'development test'
+ 1595  rm -rf vendor/bundle
+ 1596  RBENV_VERSION=3.2.2 bundle install
+ 1597  PassengerRuby /home/gomaz/.rbenv/versions/3.2.2/bin/ruby
+ 1598  sudo cat /etc/apache2/sites-available/redmine.conf
+ 1599  [200~sudo nano /etc/apache2/sites-available/redmine.conf
+ 1600  sudo nano /etc/apache2/sites-available/redmine.conf
+ 1601  sudo apache2ctl configtest
+ 1602  sudo systemctl restart apache2
+ 1603  clipcat /var/log/apache2/error.log
+ 1604  sudo cat /etc/apache2/sites-available/redmine.conf
+ 1605  passenger-config about ruby
+ 1606  passenger-config about ruby-command
+ 1607  cd /var/www/redmine
+ 1608  bundle install --without development test
+ 1609  sudo systemctl restart apache2
+ 1610  clipcat /var/log/apache2/error.log
+ 1611  cd /var/www/redmine
+ 1612  bundle install --without development test
+ 1613  sudo chown -R root:root /home/gomaz/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/passenger-6.2.0
+ 1614  sudo systemctl restart apache2
+ 1615  clipcat /var/log/apache2/error.log
+ 1616  Command: /home/gomaz/.rbenv/versions/3.2.2/bin/ruby
+ 1617  sudo chown -R root:root /home/gomaz/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/passenger-6.2.0
+ 1618  sudo chmod -R 755 /home/gomaz/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/passenger-6.2.0
+ 1619  cd /var/www/redmine
+ 1620  sudo -u www-data bundle install --without development test
+ 1621  sudo -u www-data touch /var/www/redmine/.bundle/testfile
+ 1622  sudo chown -R www-data:www-data /var/www/redmine
+ 1623  sudo chmod -R 755 /var/www/redmine
+ 1624  sudo -u www-data bundle install --without development test
+ 1625  sudo systemctl restart apache2
+ 1626  clipcat /var/log/apache2/error.log
+ 1627  sudo -u www-data touch /var/www/redmine/.bundle/testfile
+ 1628  sudo touch /home/gomaz/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/passenger-6.2.0/testfile
+ 1629  grep -E "with_advisory_lock|roadie|css_parser|rbs" Gemfile
+ 1630  sudo sed -i '/with_advisory_lock/d' Gemfile
+ 1631  sudo sed -i '$a gem "css_parser"' Gemfile
+ 1632  sudo sed -i '$a gem "rbs"' Gemfile
+ 1633  sudo -u www-data bundle install
+ 1634  clipcat /var/log/apache2/error.log
+ 1635  sudo sed -i '$a gem "css_parser"' Gemfile
+ 1636  sudo sed -i '$a gem "rbs"' Gemfile
+ 1637  sudo -u www-data bundle install
+ 1638  sudo systemctl restart apache2
+ 1639  clipcat /var/log/apache2/error.log
+ 1640  sudo sed -i '$a gem "css_parser"' Gemfile
+ 1641  sudo sed -i '$a gem "rbs"' Gemfile
+ 1642  grep -E "with_advisory_lock|roadie|css_parser|rbs" Gemfile
+ 1643  sudo sed -i '/css_parser/d' Gemfile
+ 1644  sudo sed -i '/rbs/d' Gemfile
+ 1645  sudo sed -i '/with_advisory_lock/d' Gemfile
+ 1646  echo 'gem "with_advisory_lock"' | sudo tee -a Gemfile
+ 1647  echo 'gem "css_parser"' | sudo tee -a Gemfile
+ 1648  echo 'gem "rbs"' | sudo tee -a Gemfile
+ 1649  grep -E "with_advisory_lock|roadie|css_parser|rbs" Gemfile
+ 1650  sudo systemctl restart apache2
+ 1651  clipcat /var/log/apache2/error.log
+ 1652  ls -ld /home/gomaz/.rbenv/versions/3.2.2
+ 1653  sudo chown -R www-data:www-data /home/gomaz/.rbenv/versions/3.2.2
+ 1654  ls -ld /home/gomaz/.rbenv/versions/3.2.2
+ 1655  sudo -u www-data bundle install
+ 1656  ls -l vendor/bundle
+ 1657  ls -l vendor/bundle/ruby/3.2.2/gems
+ 1658  sudo -u www-data bundle exec ruby -v
+ 1659  sudo -u www-data bash -lc 'echo $PATH'
+ 1660  sudo -u www-data bash -lc 'export PATH="/home/gomaz/.rbenv/bin:$PATH"'
+ 1661  sudo -u www-data bash -lc 'eval "$(rbenv init -)"'
+ 1662  sudo -u www-data bash -lc 'ruby -v'
+ 1663  sudo -u www-data bash -lc 'export RBENV_ROOT="/home/gomaz/.rbenv"'
+ 1664  sudo -u www-data bash -lc 'export PATH="/home/gomaz/.rbenv/bin:$PATH"'
+ 1665  sudo -u www-data bash -lc 'eval "$(rbenv init -)"'
+ 1666  sudo -u www-data bash -lc 'ruby -v'
+ 1667  sudo chsh -s /bin/bash www-data
+ 1668  sudo -u www-data bash -lc 'ruby -v'
+ 1669  sudo nano /etc/apache2/sites-available/redmine.conf
+ 1670  sudo cat /etc/apache2/sites-available/redmine.conf
+ 1671  sudo systemctl restart apache2
+ 1672  sudo -u www-data bundle exec ruby -v
+ 1673  cd /var/www/redmine
+ 1674  grep -R "PassengerRuby" /etc/apache2
+ 1675  sudo sed -i '/PassengerRuby/d' /etc/apache2/mods-enabled/passenger.conf
+ 1676  sudo systemctl restart apache2
+ 1677  clipcat /var/log/apache2/error.log
+ 1678  sudo mv /home/gomaz/.rbenv/versions/3.2.2 /opt/ruby-3.2.2
+ 1679  sudo chown -R root:root /opt/ruby-3.2.2
+ 1680  sudo nano /etc/apache2/sites-available/redmine.conf
+ 1681  sudo systemctl restart apache2
+ 1682  clipcat /var/log/apache2/error.log
+ 1683  grep -R "PassengerRuby" /etc/apache2
+ 1684  sudo sed -i '/PassengerRuby/d' /etc/apache2/mods-enabled/passenger.conf
+ 1685  sudo systemctl restart apache2
+ 1686  clipcat /var/log/apache2/error.log
+ 1687  sudo sed -i '/PassengerRuby/d' /etc/apache2/mods-enabled/passenger.conf
+ 1688  grep -R "PassengerRuby" /etc/apache2/mods-enabled/passenger.conf
+ 1689  sudo systemctl restart apache2
+ 1690  grep -R "PassengerRuby" /etc/apache2
+ 1691  sudo sed -i '/PassengerRuby/d' /etc/apache2/mods-enabled/passenger.conf
+ 1692  grep -R "PassengerRuby" /etc/apache2/mods-enabled/passenger.conf
+ 1693  sudo systemctl restart apache2
+ 1694  grep -R "PassengerRuby" /etc/apache2
+ 1695  grep -R "PassengerRuby" /etc/apache2/mods-enabled
+ 1696  sudo chown -R www-data:www-data /var/www/redmine
+ 1697  cd /var/www/redmine
+ 1698  sudo -u www-data /opt/ruby-3.2.2/bin/bundle install
+ 1699  ls -l /opt/ruby-3.2.2/bin
+ 1700  head -n 1 /opt/ruby-3.2.2/bin/bundle
+ 1701  sudo rm /opt/ruby-3.2.2/bin/bundle
+ 1702  sudo rm /opt/ruby-3.2.2/bin/bundler
+ 1703  sudo /opt/ruby-3.2.2/bin/gem install bundler
+ 1704  sudo rm -rf /opt/ruby-3.2.2
+ 1705  sudo mkdir -p /opt/ruby-3.2.2
+ 1706  cd /opt
+ 1707  sudo ruby-build 3.2.2 ruby-3.2.2
+ 1708  sudo apt remove ruby-build
+ 1709  sudo apt install ruby-build
+ 1710  sudo ruby-build 3.2.2 /opt/ruby-3.2.2
+ 1711  sudo apt remove ruby-build
+ 1712  sudo git clone https://github.com/rbenv/ruby-build.git /usr/local/src/ruby-build
+ 1713  cd /usr/local/src/ruby-build
+ 1714  sudo ./install.sh
+ 1715  sudo ruby-build 3.2.2 /opt/ruby-3.2.2
+ 1716  sudo /opt/ruby-3.2.2/bin/gem -v
+ 1717  sudo /opt/ruby-3.2.2/bin/gem install bundler
+ 1718  /opt/ruby-3.2.2/bin/bundle -v
+ 1719  cd /var/www/redmine
+ 1720  sudo -u www-data /opt/ruby-3.2.2/bin/bundle install
+ 1721  sudo systemctl restart apache2
+ 1722  sudo chown -R www-data:www-data /var/www/redmine
+ 1723  cd /var/www/redmine
+ 1724  sudo -u www-data /opt/ruby-3.2.2/bin/bundle install
+ 1725  ls -1 /tmp/passenger-error*
+ 1726  sudo chown -R www-data:www-data /var/www/redmine
+ 1727  ls -ld /var/www/redmine
+ 1728  ls /var/www/redmine | grep Gemfile
+ 1729  ls /var/www/redmine | grep config.ru
+ 1730  ls /var/www/redmine/config | grep environment.rb
+ 1731  cd /var/www/redmine
+ 1732  sudo -u www-data /opt/ruby-3.2.2/bin/bundle install
+ 1733  sudo systemctl restart apache2
+ 1734  grep PassengerRuby /etc/apache2/mods-enabled/passenger.conf
+ 1735  # Ruby
+ 1736  /opt/ruby-3.2.2/bin/ruby -v
+ 1737  # PassengerRuby
+ 1738  grep PassengerRuby /etc/apache2/mods-enabled/passenger.conf
+ 1739  # bundle install
+ 1740  cd /var/www/redmine
+ 1741  sudo -u www-data /opt/ruby-3.2.2/bin/bundle install
+ 1742  # Rails構造
+ 1743  ls /var/www/redmine | grep Gemfile
+ 1744  ls /var/www/redmine | grep config.ru
+ 1745  ls /var/www/redmine/config | grep environment.rb
+ 1746  # 権限
+ 1747  ls -ld /var/www/redmine
+ 1748  # Passenger-error
+ 1749  ls -1 /tmp/passenger-error*
+ 1750  grep -R "PassengerAppRoot" /etc/apache2/sites-enabled
+ 1751  sudo nano /etc/apache2/mods-enabled/passenger.conf
+ 1752  sudo cat /etc/apache2/mods-enabled/passenger.conf
+ 1753  sudo nano /etc/apache2/mods-enabled/passenger.conf
+ 1754  sudo systemctl restart apache2
+ 1755  clipcat /var/log/apache2/error.log
+ 1756  sudo nano /etc/apache2/mods-enabled/passenger.conf
+ 1757  sudo cat /etc/apache2/mods-enabled/passenger.conf
+ 1758  grep -R "PassengerRoot" /etc/apache2
+ 1759  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1760  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1761  sudo a2dismod passenger
+ 1762  sudo a2enmod passenger
+ 1763  sudo systemctl restart apache2
+ 1764  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1765  apachectl -M | grep passenger
+ 1766  sudo nano /etc/apache2/sites-enabled/redmine.conf
+ 1767  sudo systemctl restart apache2
+ 1768  systemctl status apache2.service -n 20
+ 1769  sudo apt install libapache2-mod-passenger
+ 1770  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1771  sudo systemctl restart apache2
+ 1772  echo "=== Passenger Status ==="
+ 1773  passenger-status
+ 1774  echo "=== Rails production.log (last 50 lines) ==="
+ 1775  tail -n 50 /var/www/redmine/log/production.log
+ 1776  echo "=== database.yml ==="
+ 1777  cat /var/www/redmine/config/database.yml
+ 1778  echo "=== secret_key_base check ==="
+ 1779  grep -R "secret_key_base" /var/www/redmine/config/
+ 1780  echo "=== passenger.conf ==="
+ 1781  cat /etc/apache2/mods-available/passenger.conf
+ 1782  echo "=== redmine.conf ==="
+ 1783  cat /etc/apache2/sites-enabled/redmine.conf
+ 1784  echo "=============================="
+ 1785  echo " 1. Passenger Status"
+ 1786  echo "=============================="
+ 1787  passenger-status
+ 1788  echo ""
+ 1789  echo "=============================="
+ 1790  echo " 2. Rails production.log (last 50 lines)"
+ 1791  echo "=============================="
+ 1792  tail -n 50 /var/www/redmine/log/production.log
+ 1793  echo ""
+ 1794  echo "=============================="
+ 1795  echo " 3. database.yml"
+ 1796  echo "=============================="
+ 1797  cat /var/www/redmine/config/database.yml
+ 1798  echo ""
+ 1799  echo "=============================="
+ 1800  echo " 4. secret_key_base"
+ 1801  echo "=============================="
+ 1802  grep -R "secret_key_base" /var/www/redmine/config/
+ 1803  echo ""
+ 1804  echo "=============================="
+ 1805  echo " 5. passenger.conf"
+ 1806  echo "=============================="
+ 1807  cat /etc/apache2/mods-available/passenger.conf
+ 1808  echo ""
+ 1809  echo "=============================="
+ 1810  echo " 6. redmine.conf"
+ 1811  echo "=============================="
+ 1812  cat /etc/apache2/sites-enabled/redmine.conf
+ 1813  rbenv install 3.2.2
+ 1814  rbenv global 3.2.2
+ 1815  rbenv rehash
+ 1816  cd /var/www/redmine
+ 1817  bundle install --path vendor/bundle
+ 1818  sudo chown -R www-data:www-data /var/www/redmine
+ 1819  sudo chmod -R 755 /var/www/redmine
+ 1820  cd /var/www/redmine
+ 1821  bundle install --path vendor/bundle
+ 1822  rbenv install 3.2.2
+ 1823  rbenv global 3.2.2
+ 1824  rbenv rehash
+ 1825  PassengerRuby /home/gomaz/.rbenv/versions/3.2.2/bin/ruby
+ 1826  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1827  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1828  sudo systemctl restart apache2
+ 1829  cat /etc/apache2/mods-available/passenger.conf
+ 1830  sudo nano /etc/apache2/sites-enabled/redmine.conf
+ 1831  sudo sed -i '/PassengerEnabled/d' /etc/apache2/sites-enabled/redmine.conf
+ 1832  sudo sed -i '/PassengerAppRoot/d' /etc/apache2/sites-enabled/redmine.conf
+ 1833  sudo sed -i '/RailsEnv/d' /etc/apache2/sites-enabled/redmine.conf
+ 1834  sudo apachectl configtest
+ 1835  sudo systemctl restart apache2
+ 1836  tail -n 50 /var/www/redmine/log/production.log
+ 1837  sudo -u www-data ruby -v
+ 1838  sudo -u www-data bash -lc 'rbenv global 3.2.2'
+ 1839  sudo -u www-data bash -lc 'rbenv rehash'
+ 1840  sudo -u www-data bash -lc 'ruby -v'
+ 1841  sudo -u www-data bash -lc 'export PATH="/home/gomaz/.rbenv/bin:$PATH"'
+ 1842  sudo -u www-data bash -lc 'eval "$(rbenv init -)"'
+ 1843  sudo -u www-data bash -lc 'rbenv global 3.2.2'
+ 1844  sudo -u www-data bash -lc 'rbenv rehash'
+ 1845  sudo mkdir -p /usr/local/rbenv
+ 1846  sudo mkdir -p /usr/local/rbenv/plugins
+ 1847  sudo chown -R www-data:www-data /usr/local/rbenv
+ 1848  sudo -u www-data git clone https://github.com/rbenv/rbenv.git /usr/local/rbenv
+ 1849  sudo -u www-data git clone https://github.com/rbenv/ruby-build.git /usr/local/rbenv/plugins/ruby-build
+ 1850  echo 'export RBENV_ROOT="/usr/local/rbenv"' | sudo tee -a /etc/apache2/envvars
+ 1851  echo 'export PATH="/usr/local/rbenv/bin:$PATH"' | sudo tee -a /etc/apache2/envvars
+ 1852  echo 'eval "$(rbenv init -)"' | sudo tee -a /etc/apache2/envvars
+ 1853  sudo -u www-data bash -lc 'rbenv install 3.2.2'
+ 1854  sudo -u www-data bash -lc 'rbenv global 3.2.2'
+ 1855  sudo -u www-data bash -lc 'rbenv rehash'
+ 1856  cd /var/www/redmine
+ 1857  sudo -u www-data /home/gomaz/.rbenv/versions/3.2.2/bin/bundle install
+ 1858  sudo systemctl restart apache2
+ 1859  sudo mkdir -p /usr/local/rbenv
+ 1860  sudo chown -R root:root /usr/local/rbenv
+ 1861  sudo -u www-data /usr/local/rbenv/bin/rbenv install 3.2.2
+ 1862  sudo mkdir -p /usr/local/rbenv
+ 1863  sudo git clone https://github.com/rbenv/rbenv.git /usr/local/rbenv
+ 1864  sudo git clone https://github.com/rbenv/ruby-build.git /usr/local/rbenv/plugins/ruby-build
+ 1865  sudo rm -rf /usr/local/rbenv
+ 1866  sudo git clone https://github.com/rbenv/rbenv.git /usr/local/rbenv
+ 1867  sudo git clone https://github.com/rbenv/ruby-build.git /usr/local/rbenv/plugins/ruby-build
+ 1868  echo 'export RBENV_ROOT=/usr/local/rbenv' | sudo tee -a /etc/apache2/envvars
+ 1869  echo 'export PATH="/usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH"' | sudo tee -a /etc/apache2/envvars
+ 1870  sudo -u www-data /usr/local/rbenv/bin/rbenv install 3.2.2
+ 1871  sudo -u www-data /usr/local/rbenv/bin/rbenv global 3.2.2
+ 1872  sudo rm -rf /usr/local/rbenv
+ 1873  sudo git clone https://github.com/rbenv/rbenv.git /usr/local/rbenv
+ 1874  sudo git clone https://github.com/rbenv/ruby-build.git /usr/local/rbenv/plugins/ruby-build
+ 1875  echo 'export RBENV_ROOT=/usr/local/rbenv' | sudo tee -a /etc/apache2/envvars
+ 1876  echo 'export PATH="/usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH"' | sudo tee -a /etc/apache2/envvars
+ 1877  sudo -u www-data /usr/local/rbenv/bin/rbenv install 3.2.2
+ 1878  sudo -u www-data /usr/local/rbenv/bin/rbenv global 3.2.2
+ 1879  sudo rm -rf /usr/local/rbenv
+ 1880  sudo git clone https://github.com/rbenv/rbenv.git /usr/local/rbenv
+ 1881  sudo git clone https://github.com/rbenv/ruby-build.git /usr/local/rbenv/plugins/ruby-build
+ 1882  echo 'export RBENV_ROOT=/usr/local/rbenv' | sudo tee -a /etc/apache2/envvars
+ 1883  echo 'export PATH="/usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH"' | sudo tee -a /etc/apache2/envvars
+ 1884  sudo -u www-data /usr/local/rbenv/bin/rbenv install 3.2.2
+ 1885  sudo -u www-data /usr/local/rbenv/bin/rbenv global 3.2.2
+ 1886  bundle exec rails server -b 0.0.0.0 -p 3000
+ 1887  nano Gemfile
+ 1888  bundle install
+ 1889  sudo chown -R www-data:www-data /var/www/redmine
+ 1890  sudo -u www-data bundle install
+ 1891  bundle exec rails server -b 0.0.0.0 -p 3000
+ 1892  sudo chown -R www-data:www-data /var/www/redmine
+ 1893  sudo -u www-data bundle install
+ 1894  cat Gemfile
+ 1895  sudo sed -i '/gem '\''puma'\''/d' Gemfile
+ 1896  echo 'gem "puma"' | sudo tee -a Gemfile
+ 1897  sudo -u www-data bundle install
+ 1898  bundle exec rails server -b 0.0.0.0 -p 3000
+ 1899  sudo sed -i "/gem 'puma'/d" Gemfile
+ 1900  echo 'gem "puma"' | sudo tee -a Gemfile
+ 1901  sudo -u www-data bundle install
+ 1902  bundle exec rails server -b 0.0.0.0 -p 3000
+ 1903  sudo -u www-data bundle install
+ 1904  sudo sed -i "/gem 'puma'/d" Gemfile
+ 1905  echo 'gem "puma"' | sudo tee -a Gemfile
+ 1906  sudo -u www-data bundle install
+ 1907  bundle exec rails server -b 0.0.0.0 -p 3000
+ 1908  sudo chown -R www-data:www-data /var/www/redmine
+ 1909  sudo -u www-data bundle install
+ 1910  bundle exec rails server -b 0.0.0.0 -p 3000
+ 1911  ls -ld /var/www/redmine
+ 1912  sudo -u www-data /usr/bin/env PATH="$PATH" bundle install
+ 1913  bundle exec rails server -b 0.0.0.0 -p 3000
+ 1914  sudo rm /var/www/redmine/public/index.html
+ 1915  ss -ltnp | grep ruby
+ 1916  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1917  ss -ltnp | grep 3000
+ 1918  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1919  ss -ltnp | grep 3000
+ 1920  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1921  ss -ltnp | grep 3000
+ 1922  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1923  sudo nano /var/www/redmine/Gemfile
+ 1924  sudo -u www-data bundle install
+ 1925  sudo nano /var/www/redmine/Gemfile
+ 1926  sudo -u www-data bundle install
+ 1927  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1928  sudo -u www-data bundle install
+ 1929  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1930  sudo -u www-data /usr/bin/env PATH="$PATH" bundle install
+ 1931  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1932  ss -ltnp | grep 3000
+ 1933  sudo chown -R www-data:www-data /var/www/redmine/vendor
+ 1934  sudo -u www-data /usr/bin/env PATH="$PATH" bundle install
+ 1935  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1936  ss -ltnp | grep 3000
+ 1937  sudo chown -R www-data:www-data /var/www/redmine/vendor
+ 1938  sudo -u www-data /usr/bin/env PATH="$PATH" bundle install
+ 1939  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1940  ss -ltnp | grep 3000
+ 1941  sudo chown -R www-data:www-data /var/www/redmine/vendor
+ 1942  sudo -u www-data /usr/bin/env PATH="$PATH" bundle install
+ 1943  sudo -u www-data /usr/bin/env PATH="$PATH" bundle exec rails server -b 0.0.0.0 -p 3000
+ 1944  ss -ltnp | grep 3000
+ 1945  cd /var/www/redmine
+ 1946  tail -f /var/log/httpd/error_log
+ 1947  tail -f /var/www/redmine/log/production.log
+ 1948  ① Passenger のエラーを見る（GUI が出ないとき）
+ 1949  clipcat /var/log/httpd/error_log
+ 1950  ② Rails のエラーを見る（Passenger が起動しているのに GUI が出ないとき）
+ 1951  clipcat /var/www/redmine/log/production.log
+ 1952  clipcat /var/log/httpd/error_log
+ 1953  clipcat /var/www/redmine/log/production.log
+ 1954  clipcat /var/log/httpd/error_log
+ 1955  clipcat /var/www/redmine/log/production.log
+ 1956  clipcat /var/log/apache2/error.log
+ 1957  clipcat /var/www/redmine/log/production.log
+ 1958  apache2ctl -M | grep passenger
+ 1959  sudo apache2ctl -M | grep passenger
+ 1960  dpkg -l | grep passenger
+ 1961  ls /etc/apache2/mods-enabled | grep passenger
+ 1962  ls /etc/apache2/mods-available | grep passenger
+ 1963  ls -l /usr/lib/apache2/modules | grep passenger
+ 1964  clipcat /etc/apache2/mods-available/passenger.load
+ 1965  sudo cat /etc/apache2/mods-available/passenger.load
+ 1966  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1967  sudo nano /etc/apache2/mods-available/passenger.conf
+ 1968  sudo cat /etc/apache2/mods-available/passenger.conf
+ 1969  sudo systemctl restart apache2
+ 1970  clipcat /etc/apache2/sites-enabled/redmine.conf
+ 1971  apache2ctl -M | grep passenger
+ 1972  ls -l /etc/apache2/mods-enabled | grep passenger
+ 1973  sudo ln -s /etc/apache2/mods-available/passenger.load /etc/apache2/mods-enabled/passenger.load
+ 1974  sudo systemctl restart apache2
+ 1975  clipcat /var/log/apache2/error.log
+ 1976  cd /var/www/redmine
+ 1977  RAILS_ENV=production bin/rails credentials:edit
+ 1978  sudo systemctl restart apache2
+ 1979  clipcat /var/log/apache2/error.log
+ 1980  ls -l config/credentials.yml.enc
+ 1981  cd /var/www/redmine/config
+ 1982  cp secrets.yml.example secrets.yml
+ 1983  ls -l /var/www/redmine/config/initializers/secret_token.rb
+ 1984  cd /var/www/redmine/config/initializers
+ 1985  sudo nano secret_token.rb
+ 1986  ruby -e "require 'securerandom'; puts SecureRandom.hex(64)"
+ 1987  sudo nano secret_token.rb
+ 1988  sudo chown -R www-data:www-data /var/www/redmine
+ 1989  sudo systemctl restart apache2
+ 1990  RAILS_ENV=production bundle exec rake db:migrate
+ 1991  clipcat /var/www/redmine/log/production.log
+ 1992  tail -n 50 /var/www/redmine/log/production.log
+ 1993  cd /var/www/redmine
+ 1994  RAILS_ENV=production bundle exec rake db:migrate
+ 1995  RAILS_ENV=production bundle exec rake redmine:load_default_data
+ 1996  sudo systemctl restart apache2
+ 1997  cd /var/www/redmine
+ 1998  sudo systemctl restart apache2
+ 1999  history
+ 2000  history > ~/Desktop/redmine_history.txt
+ 2001  ls -la ~
+ 2002  cp ~/.bash_history ~/redmine_history.txt
+ 2003  ls -l ~/redmine_history.txt
+ 2004  grep -Ei "redmine|ruby|rbenv|bundle|rake|passenger|apache|postgres|psql" ~/redmine_history.txt > ~/redmine_commands.txt
+ 2005  wc -l ~/redmine_commands.txt
+ 2006  less ~/redmine_commands.txt
+ 2007  grep -i passenger ~/.bash_history
+ 2008  grep -Ei "passenger|ruby|bundle|rake|apache" ~/.bash_history > ~/redmine_commands.txt
+ 2009  cd
+ 2010  ls
+ 2011  cd ~
+ 2012  ls
+ 2013  pwd
+ 2014  history > redmine_history.txt
+ 2015  ls -l redmine_history.txt
+ 2016  pwd
+ 2017  ls
+ 2018  history > ~/redmine_history.txt
