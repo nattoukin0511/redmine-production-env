@@ -29,9 +29,19 @@ Redmineの構築を通して、本番環境の構築手順やトラブルシュ�
 
 ---
 #2発生したエラー
-1. Apache起動エラーSomething went error
+1. Apache起動エラーSomething went wrong error
+　症状
+　　　Apache再起動失敗
+   
 2. Passenger動作不良
+　症状
+　　　Redmine画面が表示されない
+   
 3. Ruby/Bundler不整合
+  症状
+　　　bundle install失敗
+　　　PassengerRuby参照先不一致
+   
 4. DB未作成 DB doesn't exit Table
 5. 初期データ未投入
 6. secret_key_base問題
